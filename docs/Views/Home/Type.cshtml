@@ -1,0 +1,39 @@
+﻿@model docs.Models.DocumentationMember
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>@Model.Name</h1>
+    <p class="lead">@Model.Summary.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <h2>Classes</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Summary</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Children)
+                {
+                    <tr>
+                        @if (item.Type == "M") {
+                        <td>@Html.Partial("_MethodSig", item);</td>
+                        }
+                        else
+                        {
+                        <td>@item.Name</td>
+                        }
+                        <td>@item.Summary</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

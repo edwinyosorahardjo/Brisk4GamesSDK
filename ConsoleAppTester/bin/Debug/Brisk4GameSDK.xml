@@ -4,6 +4,11 @@
         <name>Brisk4GameSDK</name>
     </assembly>
     <members>
+        <member name="T:Brisk4GameSDK.AssetManager">
+            <summary>
+            Provides methods to manage Game Assets
+            </summary>
+        </member>
         <member name="M:Brisk4GameSDK.AssetManager.UploadFile(System.String,System.String,System.String)">
             <summary>
             Uploads a file to blob storage
@@ -15,7 +20,7 @@
         </member>
         <member name="M:Brisk4GameSDK.AssetManager.GetFiles(System.String)">
             <summary>
-            Retrieves <see cref="T:Brisk4GameSDK.Asset">Assets</see> associated with the authenticated user and the gameId
+            Retrieves <see cref="T:Brisk4GameSDK.Asset"/> associated with the authenticated user and the gameId
             </summary>
             <param name="gameId">The game the asset should be associated with</param>
             <see cref="T:Brisk4GameSDK.Asset">See Asset</see>
@@ -37,6 +42,11 @@
         <member name="T:Brisk4GameSDK.AuthToken">
             <summary>
             Holds the token associated with the successful authentication
+            </summary>
+        </member>
+        <member name="T:Brisk4GameSDK.Authorization">
+            <summary>
+            Supports Authoriziation for Brisk4Games
             </summary>
         </member>
         <member name="M:Brisk4GameSDK.Authorization.AuthenticateAsync(Brisk4GameSDK.Credentials)">
@@ -92,6 +102,11 @@
         <member name="T:Brisk4GameSDK.Asset">
             <summary>
             Defines an Asset held in blob storage
+            </summary>
+        </member>
+        <member name="P:Brisk4GameSDK.Asset.Filename">
+            <summary>
+            Gets the Filename
             </summary>
         </member>
         <member name="M:Brisk4GameSDK.HttpHelper.Get(Brisk4GameSDK.AuthToken,System.String)">

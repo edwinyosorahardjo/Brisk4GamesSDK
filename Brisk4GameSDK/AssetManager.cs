@@ -8,6 +8,9 @@ using Newtonsoft.Json;
 
 namespace Brisk4GameSDK
 {
+    /// <summary>
+    /// Provides methods to manage Game Assets
+    /// </summary>
     public class AssetManager : EndpointManager
     {
 
@@ -29,10 +32,10 @@ namespace Brisk4GameSDK
         }
 
         /// <summary>
-        /// Retrieves <see cref="Brisk4GameSDK.Asset">Assets</see> associated with the authenticated user and the gameId
+        /// Retrieves <see cref="Asset"/> associated with the authenticated user and the gameId
         /// </summary>
         /// <param name="gameId">The game the asset should be associated with</param>
-        /// <see cref="Brisk4GameSDK.Asset">See Asset</see>
+        /// <see cref="Asset">See Asset</see>
         /// <returns>IEnumerable&lt;Asset&gt; list of assets in the appropriate blob storage file path</returns>
         public async Task<IEnumerable<Asset>> GetFiles(string gameId)
         {

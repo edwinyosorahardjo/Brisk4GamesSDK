@@ -1,0 +1,27 @@
+﻿@model docs.Models.DocumentationMember
+
+@{ 
+    var parametersStart = Model.Name.IndexOf("(");
+    var methodName = Model.Name.Substring(0, parametersStart);
+    var parameters = Model.Name.Substring(parametersStart).Trim('(', ')').Split(',');
+
+    var documentCode = new Func<string, bool>((name) => {
+        return docs.Controllers.GodOfDocumentation.Get().Members.Any(t=>t.Type=="T" && t.Name.StartsWith(name));
+    });
+}
+
+@methodName
+
+<ul>
+    @foreach (var item in parameters)
+    {
+        if (documentCode(item))
+        {
+             <li><a href="@Url.Action("Type", new { name = item })">@item</a></li>
+        }
+        else
+        {
+             <li>@item</li>
+        }
+    }
+</ul>

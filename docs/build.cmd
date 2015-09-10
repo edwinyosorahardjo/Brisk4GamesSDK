@@ -1,1 +1,0 @@
-"tools\fsformatting.exe" metadataFormat --generate --dllFiles "C:\src\Brisk4GamesSDK\Brisk4GameSDK\bin\Debug\Brisk4GameSDK.dll" --outDir output --layoutRoots templates "templates\reference" --parameters "project-name" "bob" "project-author" "goggleyeyedloon" "root" "./" "project-nuget" "fuckinglunatic" "project-github" "elastacloud/Brisk4GameSDK"

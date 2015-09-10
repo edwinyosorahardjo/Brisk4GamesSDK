@@ -16,11 +16,11 @@ namespace Brisk4GameSDK
         /// <summary>
         /// Gets the Filename
         /// </summary>
-        public String Filename { get { return _filename; } }
-        public String TenantName { get; set; }
-        public String GameName { get; set; }
-        public String UserName { get; set; }
-        public String CdnEndpoint { get; set; }
-        public String RootContainer { get; set; }
+        public String Filename { get; }
+        public String TenantName { get; }
+        public String GameName { get; }
+        public String UserName { get; }
+        public String CdnEndpoint { get; }
+        public String RootContainer { get;  }
     }
 }

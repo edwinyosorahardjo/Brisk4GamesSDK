@@ -11,11 +11,11 @@ using System.Threading.Tasks;
 
 namespace Brisk4GameSDK
 {
-    public class HttpHelper
+    internal class HttpHelper
     {
         private readonly string _baseAddress; 
 
-        public HttpHelper(string baseAddress)
+        internal HttpHelper(string baseAddress)
         {
             _baseAddress = baseAddress;
         }
@@ -26,7 +26,7 @@ namespace Brisk4GameSDK
         /// <param name="token">The authentication token</param>
         /// <param name="path">The endpoint to invoke</param>
         /// <returns>The result of the operation</returns>
-        public async Task<String> Get(AuthToken token, string path)
+        internal async Task<String> Get(AuthToken token, string path)
         {
             using (HttpClient client = new HttpClient())
             {
@@ -59,7 +59,7 @@ namespace Brisk4GameSDK
         /// <param name="filename">The local file system path to the file</param>
         /// <param name="contentType">The mime-type</param>
         /// <returns>The result of the operation</returns>
-        public async Task<string> UploadFile(AuthToken token, string path, string filename, string contentType)
+        internal async Task<string> UploadFile(AuthToken token, string path, string filename, string contentType)
         {
             using (HttpClient client = new HttpClient())
             {
@@ -101,7 +101,7 @@ namespace Brisk4GameSDK
         /// <param name="token">The authenticationt token</param>
         /// <param name="path">The endpoint to invoke</param>
         /// <returns>The result of the operation</returns>
-        public async Task<string> Post(AuthToken token, string path)
+        internal async Task<string> Post(AuthToken token, string path)
         {
             using (HttpClient client = new HttpClient())
             {
@@ -132,7 +132,7 @@ namespace Brisk4GameSDK
         /// <param name="path">The endpoint to invoke</param>
         /// <param name="body">The message body</param>
         /// <returns>The result of the operation</returns>
-        public async Task<string> Post(AuthToken token, string path, string body)
+        internal async Task<string> Post(AuthToken token, string path, string body)
         {
             using (HttpClient client = new HttpClient())
             {
@@ -163,7 +163,7 @@ namespace Brisk4GameSDK
         /// <param name="token">The authenticationt token</param>
         /// <param name="path">The endpoint to invoke</param>
         /// <returns>The result of the operation</returns>
-        public async Task<String> Delete(AuthToken token, string path)
+        internal async Task<String> Delete(AuthToken token, string path)
         {
             using (HttpClient client = new HttpClient())
             {

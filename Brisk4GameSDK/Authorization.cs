@@ -28,6 +28,9 @@ namespace Brisk4GameSDK
         public string Token { get; set; }
     }
 
+    /// <summary>
+    /// Supports Authoriziation for Brisk4Games
+    /// </summary>
     public class Authorization
     {
         private readonly string _tenantName = ConfigurationManager.AppSettings["TenantName"];

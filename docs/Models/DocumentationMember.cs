@@ -1,0 +1,44 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Xml.Linq;
+
+namespace docs.Models
+{
+    public class DocumentationMember
+    {
+        private XElement member;
+
+        public DocumentationMember(XElement member)
+        {
+            this.member = member;
+            this.Name = member.Attribute("name").Value.Substring(2);
+            this.Type = member.Attribute("name").Value.Substring(0, 1);
+            this.Summary = member.Descendants("summary").First().Value;
+            this.Parameters = Parse(member.Descendants("param"));
+        }
+
+        private Dictionary<string, string> Parse(IEnumerable<XElement> parameterNodes)
+        {
+            if (!parameterNodes.Any())
+            {
+                return new Dictionary<string, string> { };
+            }
+
+            var parameters = new Dictionary<string, string>();
+            foreach (var item in parameterNodes)
+            {
+                parameters.Add(item.Attribute("name").Value, item.Value);
+            }
+            return parameters;
+        }
+
+        public string Name { get; set; }
+        public string Type { get; set; }
+        public string Summary { get; set; }
+        public Dictionary<string,string> Parameters { get; set; }
+        public string Returns { get; set; }
+        public DocumentationMember[] Children { get; set; }
+    }
+}
