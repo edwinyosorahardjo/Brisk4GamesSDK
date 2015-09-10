@@ -29,10 +29,11 @@ namespace Brisk4GameSDK
         }
 
         /// <summary>
-        /// Retrieves assets associated with the authenticated user and the gameId
+        /// Retrieves <see cref="Brisk4GameSDK.Asset">Assets</see> associated with the authenticated user and the gameId
         /// </summary>
         /// <param name="gameId">The game the asset should be associated with</param>
-        /// <returns>IEnumerable<Asset>A list of assets in the appropriate blob storage file path</returns>
+        /// <see cref="Brisk4GameSDK.Asset">See Asset</see>
+        /// <returns>IEnumerable&lt;Asset&gt; list of assets in the appropriate blob storage file path</returns>
         public async Task<IEnumerable<Asset>> GetFiles(string gameId)
         {
             var response = await _httpHelper.Get(_token, $"api/{gameId}");

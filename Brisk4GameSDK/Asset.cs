@@ -12,7 +12,11 @@ namespace Brisk4GameSDK
     /// </summary>
     public class Asset
     {
-        public String Filename { get; set; }
+        private string _filename;
+        /// <summary>
+        /// Gets the Filename
+        /// </summary>
+        public String Filename { get { return _filename; } }
         public String TenantName { get; set; }
         public String GameName { get; set; }
         public String UserName { get; set; }

@@ -8,3 +8,14 @@ C:\Users\david\Work\elastacloud\gaming\Brisk4GameSDK\Brisk4GameSDK\obj\Debug\Bri
 C:\Users\david\Work\elastacloud\gaming\Brisk4GameSDK\Brisk4GameSDK\obj\Debug\Brisk4GameSDK.pdb
 C:\Users\david\Work\elastacloud\gaming\Brisk4GameSDK\Brisk4GameSDK\bin\Debug\Newtonsoft.Json.dll
 C:\Users\david\Work\elastacloud\gaming\Brisk4GameSDK\Brisk4GameSDK\bin\Debug\Newtonsoft.Json.xml
+C:\src\Brisk4GamesSDK\Brisk4GameSDK\bin\Debug\Brisk4GameSDK.dll
+C:\src\Brisk4GamesSDK\Brisk4GameSDK\bin\Debug\Brisk4GameSDK.pdb
+C:\src\Brisk4GamesSDK\Brisk4GameSDK\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+C:\src\Brisk4GamesSDK\Brisk4GameSDK\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms.dll
+C:\src\Brisk4GamesSDK\Brisk4GameSDK\bin\Debug\Newtonsoft.Json.dll
+C:\src\Brisk4GamesSDK\Brisk4GameSDK\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.xml
+C:\src\Brisk4GamesSDK\Brisk4GameSDK\bin\Debug\Newtonsoft.Json.xml
+C:\src\Brisk4GamesSDK\Brisk4GameSDK\obj\Debug\Brisk4GameSDK.dll
+C:\src\Brisk4GamesSDK\Brisk4GameSDK\obj\Debug\Brisk4GameSDK.pdb
+C:\src\Brisk4GamesSDK\Brisk4GameSDK\bin\Debug\Brisk4GameSDK.XML
+C:\src\Brisk4GamesSDK\Brisk4GameSDK\obj\Debug\Brisk4GameSDK.csprojResolveAssemblyReference.cache

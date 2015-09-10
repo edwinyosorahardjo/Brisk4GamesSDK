@@ -34,7 +34,7 @@ namespace Brisk4GameSDK
                 HttpRequestMessage message = new HttpRequestMessage();
                 message.Method = HttpMethod.Get;
                 message.RequestUri = new Uri($"{_baseAddress}/{path}");
-                message.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token.Token.AccessToken);
+                message.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token.Token);
 
                 HttpResponseMessage response = await client.SendAsync(message);
 
@@ -66,7 +66,7 @@ namespace Brisk4GameSDK
                 HttpRequestMessage message = new HttpRequestMessage();
                 message.Method = HttpMethod.Post;
                 message.RequestUri = new Uri($"{_baseAddress}/{path}");
-                message.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token.Token.AccessToken);
+                message.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token.Token);
                 
 
                 var content =
@@ -109,7 +109,7 @@ namespace Brisk4GameSDK
                 HttpRequestMessage message = new HttpRequestMessage();
                 message.Method = HttpMethod.Post;
                 message.RequestUri = new Uri($"{_baseAddress}/{path}");
-                message.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token.Token.AccessToken);
+                message.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token.Token);
 
                 HttpResponseMessage response = await client.SendAsync(message);
 
@@ -141,7 +141,7 @@ namespace Brisk4GameSDK
                 message.Method = HttpMethod.Post;
                 message.Content = new StringContent(body, Encoding.UTF8, "application/json");
                 message.RequestUri = new Uri($"{_baseAddress}/{path}");
-                message.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token.Token.AccessToken);
+                message.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token.Token);
 
                 HttpResponseMessage response = await client.SendAsync(message);
 
@@ -171,7 +171,7 @@ namespace Brisk4GameSDK
                 HttpRequestMessage message = new HttpRequestMessage();
                 message.Method = HttpMethod.Delete;
                 message.RequestUri = new Uri($"{_baseAddress}/{path}");
-                message.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token.Token.AccessToken);
+                message.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token.Token);
 
                 HttpResponseMessage response = await client.SendAsync(message);
 

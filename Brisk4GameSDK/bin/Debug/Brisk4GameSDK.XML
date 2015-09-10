@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Brisk4GameSDK</name>
+    </assembly>
+    <members>
+        <member name="M:Brisk4GameSDK.AssetManager.UploadFile(System.String,System.String,System.String)">
+            <summary>
+            Uploads a file to blob storage
+            </summary>
+            <param name="gameId">The game the asset should be associated with</param>
+            <param name="localFilePath">The local system file path</param>
+            <param name="mimeType">The file mime type</param>
+            <returns></returns>
+        </member>
+        <member name="M:Brisk4GameSDK.AssetManager.GetFiles(System.String)">
+            <summary>
+            Retrieves <see cref="T:Brisk4GameSDK.Asset">Assets</see> associated with the authenticated user and the gameId
+            </summary>
+            <param name="gameId">The game the asset should be associated with</param>
+            <see cref="T:Brisk4GameSDK.Asset">See Asset</see>
+            <returns>IEnumerable&lt;Asset&gt; list of assets in the appropriate blob storage file path</returns>
+        </member>
+        <member name="M:Brisk4GameSDK.AssetManager.DeleteFile(System.String,System.String)">
+            <summary>
+            Deletes an asset associated with the authenticated user 
+            </summary>
+            <param name="gameId">The game the asset should be associated with</param>
+            <param name="filename">The name of the asset to delete</param>
+            <returns></returns>
+        </member>
+        <member name="T:Brisk4GameSDK.Credentials">
+            <summary>
+            Holds the credentials to use when authenticating
+            </summary>
+        </member>
+        <member name="T:Brisk4GameSDK.AuthToken">
+            <summary>
+            Holds the token associated with the successful authentication
+            </summary>
+        </member>
+        <member name="M:Brisk4GameSDK.Authorization.AuthenticateAsync(Brisk4GameSDK.Credentials)">
+            <summary>
+            Authenticate using the given credentials
+            </summary>
+            <param name="credentials">The credentials to authenticate with</param>
+            <returns>The authenticated token</returns>
+        </member>
+        <member name="M:Brisk4GameSDK.ChurnManager.Get(System.String,System.String)">
+            <summary>
+            Returns the churn value for the given game and player id
+            </summary>
+            <param name="gameId">The game for which the churn value should be retrieved</param>
+            <param name="playerId">The player for which the churn value should be retrieved</param>
+            <returns>The churn value</returns>
+        </member>
+        <member name="T:Brisk4GameSDK.FriendLink">
+            <summary>
+            Encapsulates a relationship between two people and a game
+            </summary>
+        </member>
+        <member name="M:Brisk4GameSDK.FriendManager.AddFriend(Brisk4GameSDK.FriendLink)">
+            <summary>
+            Create a new friend relationship between two people
+            </summary>
+            <param name="friend">Defines the relationship between 2 people and a game</param>
+            <returns>The result of the operation</returns>
+        </member>
+        <member name="M:Brisk4GameSDK.FriendManager.AddFriends(System.Collections.Generic.IEnumerable{Brisk4GameSDK.FriendLink})">
+            <summary>
+            Creates new friend relationships between a list of people 
+            All elements relate to the same player and game
+            </summary>
+            <param name="friends">A list of friends relationships</param>
+            <returns>The result of the operation</returns>
+        </member>
+        <member name="M:Brisk4GameSDK.FriendManager.GetFriends(System.String,System.String)">
+            <summary>
+            Retrieves friends assoicated with the player and game
+            </summary>
+            <param name="gameId">The game associated with the player</param>
+            <param name="playerId">The player whose friends should be retrieved</param>
+            <returns>A list of friends associated witht the game and player</returns>
+        </member>
+        <member name="M:Brisk4GameSDK.FriendManager.DeleteFriend(Brisk4GameSDK.FriendLink)">
+            <summary>
+            Removes a friend relationship
+            </summary>
+            <param name="friend">The friend relationship that should be deleted</param>
+            <returns>The result of the operation</returns>
+        </member>
+        <member name="T:Brisk4GameSDK.Asset">
+            <summary>
+            Defines an Asset held in blob storage
+            </summary>
+        </member>
+        <member name="P:Brisk4GameSDK.Asset.Filename">
+            <summary>
+            Gets the Filename
+            </summary>
+        </member>
+        <member name="M:Brisk4GameSDK.HttpHelper.Get(Brisk4GameSDK.AuthToken,System.String)">
+            <summary>
+            Helper method to invoke an endpoint using GET
+            </summary>
+            <param name="token">The authentication token</param>
+            <param name="path">The endpoint to invoke</param>
+            <returns>The result of the operation</returns>
+        </member>
+        <member name="M:Brisk4GameSDK.HttpHelper.UploadFile(Brisk4GameSDK.AuthToken,System.String,System.String,System.String)">
+            <summary>
+            Uploads a file to the specified endpoint
+            </summary>
+            <param name="token">The authentication token</param>
+            <param name="path">The endpoint to invoke</param>
+            <param name="filename">The local file system path to the file</param>
+            <param name="contentType">The mime-type</param>
+            <returns>The result of the operation</returns>
+        </member>
+        <member name="M:Brisk4GameSDK.HttpHelper.Post(Brisk4GameSDK.AuthToken,System.String)">
+            <summary>
+            Helper method to invoke an endpoint using POST
+            </summary>
+            <param name="token">The authenticationt token</param>
+            <param name="path">The endpoint to invoke</param>
+            <returns>The result of the operation</returns>
+        </member>
+        <member name="M:Brisk4GameSDK.HttpHelper.Post(Brisk4GameSDK.AuthToken,System.String,System.String)">
+            <summary>
+            Helper method to invoke an endpoint using POST
+            </summary>
+            <param name="token">The authenticationt token</param>
+            <param name="path">The endpoint to invoke</param>
+            <param name="body">The message body</param>
+            <returns>The result of the operation</returns>
+        </member>
+        <member name="M:Brisk4GameSDK.HttpHelper.Delete(Brisk4GameSDK.AuthToken,System.String)">
+            <summary>
+            Helper method to invoke an endpoint using DELETE
+            </summary>
+            <param name="token">The authenticationt token</param>
+            <param name="path">The endpoint to invoke</param>
+            <returns>The result of the operation</returns>
+        </member>
+        <member name="T:Brisk4GameSDK.LeaderboardEntry">
+            <summary>
+            Represents a entry in a leaderboard
+            </summary>
+        </member>
+        <member name="M:Brisk4GameSDK.LeaderboardManager.GetGameLeaderboard(System.String)">
+            <summary>
+            Returns a leaderboard for a given game
+            </summary>
+            <param name="gameId">The game the leaderboard is associated with</param>
+            <returns>The retrieved leaderboard</returns>
+        </member>
+        <member name="M:Brisk4GameSDK.LeaderboardManager.GetFriendLeaderboard(System.String,System.String)">
+            <summary>
+            Returns a friend leaderboard for a given game
+            </summary>
+            <param name="gameId">The game the leaderboard is associated with</param>
+            <param name="playerId">The player the leaderboard is associated with</param>
+            <returns>The retrieved leaderboard</returns>
+        </member>
+        <member name="M:Brisk4GameSDK.LeaderboardManager.GetCountryLeaderboard(System.String,System.String)">
+            <summary>
+            Returns a country leaderboard for a given game
+            </summary>
+            <param name="gameId">The game the leaderboard is associated with</param>
+            <param name="countryId">The country code the leaderboard is associated with</param>
+            <returns>The retrieved leaderboard</returns>
+        </member>
+    </members>
+</doc>

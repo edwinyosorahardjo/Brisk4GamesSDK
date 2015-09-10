@@ -25,7 +25,7 @@ namespace Brisk4GameSDK
     /// </summary>
     public class AuthToken
     {
-        public AuthenticationResult Token { get; set; }
+        public string Token { get; set; }
     }
 
     public class Authorization
@@ -51,7 +51,7 @@ namespace Brisk4GameSDK
  
             return new AuthToken()
             {
-                Token = result
+                Token = result.AccessToken
             };
         }
     }

@@ -11,3 +11,17 @@ C:\Users\david\Work\elastacloud\gaming\Brisk4GameSDK\ConsoleAppTester\obj\Debug\
 C:\Users\david\Work\elastacloud\gaming\Brisk4GameSDK\ConsoleAppTester\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms.dll
 C:\Users\david\Work\elastacloud\gaming\Brisk4GameSDK\ConsoleAppTester\bin\Debug\Newtonsoft.Json.dll
 C:\Users\david\Work\elastacloud\gaming\Brisk4GameSDK\ConsoleAppTester\bin\Debug\Newtonsoft.Json.xml
+C:\src\Brisk4GamesSDK\ConsoleAppTester\bin\Debug\ConsoleAppTester.exe.config
+C:\src\Brisk4GamesSDK\ConsoleAppTester\obj\Debug\ConsoleAppTester.exe
+C:\src\Brisk4GamesSDK\ConsoleAppTester\obj\Debug\ConsoleAppTester.pdb
+C:\src\Brisk4GamesSDK\ConsoleAppTester\bin\Debug\ConsoleAppTester.exe
+C:\src\Brisk4GamesSDK\ConsoleAppTester\bin\Debug\ConsoleAppTester.pdb
+C:\src\Brisk4GamesSDK\ConsoleAppTester\bin\Debug\Brisk4GameSDK.dll
+C:\src\Brisk4GamesSDK\ConsoleAppTester\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+C:\src\Brisk4GamesSDK\ConsoleAppTester\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms.dll
+C:\src\Brisk4GamesSDK\ConsoleAppTester\bin\Debug\Newtonsoft.Json.dll
+C:\src\Brisk4GamesSDK\ConsoleAppTester\bin\Debug\Brisk4GameSDK.pdb
+C:\src\Brisk4GamesSDK\ConsoleAppTester\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.xml
+C:\src\Brisk4GamesSDK\ConsoleAppTester\bin\Debug\Newtonsoft.Json.xml
+C:\src\Brisk4GamesSDK\ConsoleAppTester\obj\Debug\ConsoleAppTester.csprojResolveAssemblyReference.cache
+C:\src\Brisk4GamesSDK\ConsoleAppTester\bin\Debug\Brisk4GameSDK.xml
