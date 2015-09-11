@@ -38,7 +38,7 @@ namespace Brisk4GameSDK
         /// Returns a leaderboard for a given game Id
         /// </summary>
         /// <param name="gameId">The game the leaderboard is associated with</param>
-        /// <returns>The retrieved leaderboard as <see cref="T:Task{IEnumerable<LeaderboardEntry>}"/></returns>
+        /// <returns>The retrieved leaderboard as <see cref="T:Task{IEnumerable{Brisk4GameSDK.LeaderboardEntry}}"/></returns>
         public async Task<IEnumerable<LeaderboardEntry>> GetGameLeaderboard(string gameId)
         {
             var response = await _httpHelper.Get(_token, $"api/leaderboard/{gameId}");

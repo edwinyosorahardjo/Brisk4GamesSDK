@@ -303,18 +303,26 @@
             <param name="path">The endpoint to invoke</param>
             <returns>The result of the operation</returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "T:Brisk4GameSDK.LeaderboardEntry" -->
+        <member name="T:Brisk4GameSDK.LeaderboardEntry">
+            <summary>
+            Represents a entry in a leaderboard
+            </summary>
+            <example>
+            LeaderboardManager leaderboardManager = new LeaderboardManager(token);
+            IEnumerable&gt;LeaderboardEntry%lt; global = await lmanager.GetGameLeaderboard("GameId");
+            </example>
+        </member>
         <member name="P:Brisk4GameSDK.LeaderboardEntry.PlayerId">
             <summary>
             The players Id
             </summary>
-            <returns><see cref="T:Task{System.String}"/></returns>
+            <returns><see cref="T:System.String"/></returns>
         </member>
         <member name="P:Brisk4GameSDK.LeaderboardEntry.Score">
             <summary>
             The players score
             </summary>
-            <returns><see cref="T:Task{System.String}"/></returns>
+            <returns><see cref="T:System.Int32"/></returns>
         </member>
         <member name="T:Brisk4GameSDK.LeaderboardManager">
             <summary>
@@ -340,7 +348,13 @@
             </summary>
             <param name="token">A valid authentication token</param>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:Brisk4GameSDK.LeaderboardManager.GetGameLeaderboard(System.String)" -->
+        <member name="M:Brisk4GameSDK.LeaderboardManager.GetGameLeaderboard(System.String)">
+            <summary>
+            Returns a leaderboard for a given game Id
+            </summary>
+            <param name="gameId">The game the leaderboard is associated with</param>
+            <returns>The retrieved leaderboard as <see cref="T:Task{IEnumerable{Brisk4GameSDK.LeaderboardEntry}}"/></returns>
+        </member>
         <!-- Badly formed XML comment ignored for member "M:Brisk4GameSDK.LeaderboardManager.GetFriendLeaderboard(System.String,System.String)" -->
         <!-- Badly formed XML comment ignored for member "M:Brisk4GameSDK.LeaderboardManager.GetCountryLeaderboard(System.String,System.String)" -->
     </members>
