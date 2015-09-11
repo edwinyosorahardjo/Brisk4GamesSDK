@@ -8,6 +8,9 @@ using Newtonsoft.Json;
 
 namespace Brisk4GameSDK
 {
+    /// <summary>
+    /// Manages Friend Relationships
+    /// </summary>
     public class FriendManager : EndpointManager
     {
         public FriendManager(AuthToken token) : base(token, ConfigurationManager.AppSettings["FabricEndpoint"])
@@ -44,7 +47,7 @@ namespace Brisk4GameSDK
         /// </summary>
         /// <param name="gameId">The game associated with the player</param>
         /// <param name="playerId">The player whose friends should be retrieved</param>
-        /// <returns>A list of friends associated witht the game and player</returns>
+        /// <returns>A list of friends associated with the game and player <see cref="List{String}"/></returns>
         public async Task<IEnumerable<string>> GetFriends(string gameId, string playerId)
         {
             var result = await _httpHelper.Get(_token, $"api/friend/{gameId}/{playerId}");

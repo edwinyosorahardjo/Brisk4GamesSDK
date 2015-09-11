@@ -18,4 +18,3 @@ C:\src\Brisk4GamesSDK\Brisk4GameSDK\bin\Debug\Newtonsoft.Json.xml
 C:\src\Brisk4GamesSDK\Brisk4GameSDK\obj\Debug\Brisk4GameSDK.dll
 C:\src\Brisk4GamesSDK\Brisk4GameSDK\obj\Debug\Brisk4GameSDK.pdb
 C:\src\Brisk4GamesSDK\Brisk4GameSDK\bin\Debug\Brisk4GameSDK.XML
-C:\src\Brisk4GamesSDK\Brisk4GameSDK\obj\Debug\Brisk4GameSDK.csprojResolveAssemblyReference.cache

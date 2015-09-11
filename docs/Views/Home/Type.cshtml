@@ -10,8 +10,32 @@
 </div>
 
 <div class="row">
-    <div class="col-md-8">
-        <h2>Classes</h2>
+    <div class="col-md-12">
+        <h2>Methods</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Parameters</th>
+                    <th>Returns</th>
+                    <th>Summary</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Children.Where(t => t.Type == "M"))
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@Html.Partial("_MethodSig", item)</td>
+                        <td>@item.Returns</td>
+                        <td>@item.Summary</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-12">
+        <h2>Properties</h2>
         <table>
             <thead>
                 <tr>
@@ -20,16 +44,10 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model.Children)
+                @foreach (var item in Model.Children.Where(t=>t.Type == "P"))
                 {
                     <tr>
-                        @if (item.Type == "M") {
-                        <td>@Html.Partial("_MethodSig", item);</td>
-                        }
-                        else
-                        {
                         <td>@item.Name</td>
-                        }
                         <td>@item.Summary</td>
                     </tr>
                 }

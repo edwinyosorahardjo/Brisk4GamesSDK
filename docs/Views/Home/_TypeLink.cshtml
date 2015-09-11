@@ -1,0 +1,26 @@
+﻿@model String
+
+@{
+    string[] components = new string[1] { Model };
+    if (Model.Contains("{"))
+    {
+        components = Model.Split('{').Select(t=>t.Trim('{','}')).ToArray();
+    }
+
+    var documentCode = new Func<string, bool>((name) =>
+    {
+        return docs.Controllers.GodOfDocumentation.Get().Members.Any(t => t.Type == "T" && t.Name.StartsWith(name));
+    });
+}
+@foreach (var item in components)
+{
+
+    if (documentCode(item))
+    {
+        <a href="@Url.Action("Type", new { name = item })">@item</a>
+    }
+    else
+    {
+        @item
+    }
+}

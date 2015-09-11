@@ -17,6 +17,17 @@ namespace docs.Models
             this.Type = member.Attribute("name").Value.Substring(0, 1);
             this.Summary = member.Descendants("summary").First().Value;
             this.Parameters = Parse(member.Descendants("param"));
+            if (member.Descendants("returns").Any())
+            {
+                this.Returns = ReadRaw(member.Descendants("returns").First());
+            }
+        }
+
+        private string ReadRaw(XElement xElement)
+        {
+            var reader = xElement.CreateReader();
+            reader.MoveToContent();
+            return reader.ReadInnerXml();
         }
 
         private Dictionary<string, string> Parse(IEnumerable<XElement> parameterNodes)

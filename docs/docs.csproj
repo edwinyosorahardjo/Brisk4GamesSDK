@@ -239,6 +239,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Type.cshtml" />
     <Content Include="Views\Home\_MethodSig.cshtml" />
+    <Content Include="Views\Home\_TypeLink.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

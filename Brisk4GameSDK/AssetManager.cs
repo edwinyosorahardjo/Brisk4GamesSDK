@@ -25,7 +25,7 @@ namespace Brisk4GameSDK
         /// <param name="gameId">The game the asset should be associated with</param>
         /// <param name="localFilePath">The local system file path</param>
         /// <param name="mimeType">The file mime type</param>
-        /// <returns></returns>
+        /// <returns><see cref="T:Task{String}"/></returns>
         public async Task<string> UploadFile(String gameId, string localFilePath, string mimeType)
         {
             return await _httpHelper.UploadFile(_token, $"api/{gameId}", localFilePath, mimeType);
@@ -36,7 +36,7 @@ namespace Brisk4GameSDK
         /// </summary>
         /// <param name="gameId">The game the asset should be associated with</param>
         /// <see cref="Asset">See Asset</see>
-        /// <returns>IEnumerable&lt;Asset&gt; list of assets in the appropriate blob storage file path</returns>
+        /// <returns>An <see cref="T:IEnumerable{Asset}"/> in the appropriate blob storage file path</returns>
         public async Task<IEnumerable<Asset>> GetFiles(string gameId)
         {
             var response = await _httpHelper.Get(_token, $"api/{gameId}");

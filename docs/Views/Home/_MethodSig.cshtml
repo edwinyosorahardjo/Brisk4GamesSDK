@@ -10,18 +10,9 @@
     });
 }
 
-@methodName
-
 <ul>
     @foreach (var item in parameters)
     {
-        if (documentCode(item))
-        {
-             <li><a href="@Url.Action("Type", new { name = item })">@item</a></li>
-        }
-        else
-        {
-             <li>@item</li>
-        }
+        <li>@Html.Partial("_TypeLink", item)</li>
     }
 </ul>

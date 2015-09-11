@@ -16,7 +16,7 @@
             <param name="gameId">The game the asset should be associated with</param>
             <param name="localFilePath">The local system file path</param>
             <param name="mimeType">The file mime type</param>
-            <returns></returns>
+            <returns><see cref="T:Task{String}"/></returns>
         </member>
         <member name="M:Brisk4GameSDK.AssetManager.GetFiles(System.String)">
             <summary>
@@ -24,7 +24,7 @@
             </summary>
             <param name="gameId">The game the asset should be associated with</param>
             <see cref="T:Brisk4GameSDK.Asset">See Asset</see>
-            <returns>IEnumerable&lt;Asset&gt; list of assets in the appropriate blob storage file path</returns>
+            <returns>An <see cref="T:IEnumerable{Asset}"/> in the appropriate blob storage file path</returns>
         </member>
         <member name="M:Brisk4GameSDK.AssetManager.DeleteFile(System.String,System.String)">
             <summary>
@@ -69,6 +69,11 @@
             Encapsulates a relationship between two people and a game
             </summary>
         </member>
+        <member name="T:Brisk4GameSDK.FriendManager">
+            <summary>
+            Manages Friend Relationships
+            </summary>
+        </member>
         <member name="M:Brisk4GameSDK.FriendManager.AddFriend(Brisk4GameSDK.FriendLink)">
             <summary>
             Create a new friend relationship between two people
@@ -90,7 +95,7 @@
             </summary>
             <param name="gameId">The game associated with the player</param>
             <param name="playerId">The player whose friends should be retrieved</param>
-            <returns>A list of friends associated witht the game and player</returns>
+            <returns>A list of friends associated with the game and player <see cref="T:System.Collections.Generic.List`1"/></returns>
         </member>
         <member name="M:Brisk4GameSDK.FriendManager.DeleteFriend(Brisk4GameSDK.FriendLink)">
             <summary>
@@ -107,6 +112,32 @@
         <member name="P:Brisk4GameSDK.Asset.Filename">
             <summary>
             Gets the Filename
+            </summary>
+            <see cref="T:System.String"/>
+        </member>
+        <member name="P:Brisk4GameSDK.Asset.TenantName">
+            <summary>
+            Gets a TenantName
+            </summary>
+        </member>
+        <member name="P:Brisk4GameSDK.Asset.GameName">
+            <summary>
+            The name of the Game
+            </summary>
+        </member>
+        <member name="P:Brisk4GameSDK.Asset.UserName">
+            <summary>
+            The UserName associated with this Asset
+            </summary>
+        </member>
+        <member name="P:Brisk4GameSDK.Asset.CdnEndpoint">
+            <summary>
+            An endpoint location on the CDN for this asset
+            </summary>
+        </member>
+        <member name="P:Brisk4GameSDK.Asset.RootContainer">
+            <summary>
+            The Root Container
             </summary>
         </member>
         <member name="M:Brisk4GameSDK.HttpHelper.Get(Brisk4GameSDK.AuthToken,System.String)">
