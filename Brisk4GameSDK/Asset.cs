@@ -12,7 +12,7 @@ namespace Brisk4GameSDK
     /// </summary>
     /// <example>
     /// AssetManager assetManager = new AssetManager(token);
-    /// IEnumerable<Asset> assets = await assetManager.GetFiles("AS3");
+    /// IEnumerable&lt;Asset&gt; assets = await assetManager.GetFiles("AS3");
     /// </example>
     public class Asset
     {

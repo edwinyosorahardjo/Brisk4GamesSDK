@@ -43,7 +43,7 @@
             </summary>
             <param name="gameId">The game the asset should be associated with</param>
             <see cref="T:Brisk4GameSDK.Asset">See Asset</see>
-            <returns>An <see cref="T:IEnumerable{Asset}"/> in the appropriate blob storage file path</returns>
+            <returns>An <see cref="T:IEnumerable{Brisk4GameSDK.Asset}"/> in the appropriate blob storage file path</returns>
         </member>
         <member name="M:Brisk4GameSDK.AssetManager.DeleteFile(System.String,System.String)">
             <summary>
@@ -222,7 +222,15 @@
             <returns>A list of friends associated with the game and player <see cref="!:List&lt;System.String&gt;"/></returns>
         </member>
         <!-- Badly formed XML comment ignored for member "M:Brisk4GameSDK.FriendManager.DeleteFriend(Brisk4GameSDK.FriendLink)" -->
-        <!-- Badly formed XML comment ignored for member "T:Brisk4GameSDK.Asset" -->
+        <member name="T:Brisk4GameSDK.Asset">
+            <summary>
+            Defines an Asset held in blob storage
+            </summary>
+            <example>
+            AssetManager assetManager = new AssetManager(token);
+            IEnumerable&lt;Asset&gt; assets = await assetManager.GetFiles("AS3");
+            </example>
+        </member>
         <member name="P:Brisk4GameSDK.Asset.Filename">
             <summary>
             Gets the Filename

@@ -52,7 +52,7 @@ namespace Brisk4GameSDK
         /// </summary>
         /// <param name="gameId">The game the asset should be associated with</param>
         /// <see cref="Asset">See Asset</see>
-        /// <returns>An <see cref="T:IEnumerable{Asset}"/> in the appropriate blob storage file path</returns>
+        /// <returns>An <see cref="T:IEnumerable{Brisk4GameSDK.Asset}"/> in the appropriate blob storage file path</returns>
         public async Task<IEnumerable<Asset>> GetFiles(string gameId)
         {
             var response = await _httpHelper.Get(_token, $"api/{gameId}");

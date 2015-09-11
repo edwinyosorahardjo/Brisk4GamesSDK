@@ -9,6 +9,16 @@
     <p class="lead">@Model.Summary.</p>
 </div>
 
+
+@if (!string.IsNullOrEmpty(Model.Example))
+{
+<div class="row">
+    <div class="col-md-12">
+        <pre><code class="cs hljs">@Model.Example</code></pre>
+    </div>
+</div>
+}
+
 <div class="row">
     <div class="col-md-12">
         <h2>Methods</h2>
@@ -27,7 +37,13 @@
                     <tr>
                         <td>@item.Name.Replace(Model.Name + ".", "").Replace("(", " (").Replace("{", " {").Replace(",", ", ")</td>
                         <td>@Html.Partial("_MethodSig", item)</td>
+                        @if (item.Name.Contains("#ctor"))
+                        {
+                            <td>A new instance of this class</td>}
+                        else
+                        {
                         <td>@Html.Partial("_TypeLink", (item.Returns))</td>
+                        }
                         <td>@item.Summary</td>
                     </tr>
                 }

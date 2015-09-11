@@ -25,6 +25,10 @@ namespace docs.Models
             {
                 this.Returns = "Undocumented return type";
             }
+            if (member.Descendants("example").Any())
+            {
+                this.Example = member.Descendants("example").First().Value;
+            }
         }
 
         private string ReadRaw(XElement xElement)
@@ -54,6 +58,7 @@ namespace docs.Models
         public string Summary { get; set; }
         public Dictionary<string,string> Parameters { get; set; }
         public string Returns { get; set; }
+        public string Example { get; set; }
         public DocumentationMember[] Children { get; set; }
     }
 }
