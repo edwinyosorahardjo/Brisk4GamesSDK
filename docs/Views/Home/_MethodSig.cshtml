@@ -10,9 +10,24 @@
     });
 }
 
-<ul>
-    @foreach (var item in parameters)
-    {
-        <li>@Html.Partial("_TypeLink", item)</li>
-    }
-</ul>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Summary</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @for (var i = 0; i < Model.Parameters.Count; i++)
+        {
+            var item = parameters[i];
+            <tr>
+                <td>@Model.Parameters.ElementAt(i).Key</td>
+                <td>@Html.Partial("_TypeLink", item)</td>
+                <td>@Model.Parameters.ElementAt(i).Value</td>
+            </tr>
+        }
+    </tbody>
+</table>
