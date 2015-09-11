@@ -13,9 +13,25 @@ namespace Brisk4GameSDK
     /// <summary>
     /// Holds the credentials to use when authenticating
     /// </summary>
+    /// <example>
+    /// Credentials info = new Credentials()
+    ///                    {
+    ///                         Key = "username@b4gTenant.onmicrosoft.com",
+    ///                         Secret = "Password"
+    ///                     };
+    /// </example>
     public class Credentials
     {
+        /// <summary>
+        /// The authentication key
+        /// </summary>
+        /// <returns>System.String</returns>
         public string Key { get; set; }
+
+        /// <summary>
+        /// The authentication secret
+        /// </summary>
+        /// <returns>System.String</returns>
         public string Secret { get; set; }
     }
 
@@ -23,14 +39,42 @@ namespace Brisk4GameSDK
     /// <summary>
     /// Holds the token associated with the successful authentication
     /// </summary>
+    /// <example>
+    /// Credentials info = new Credentials()
+    ///                    {
+    ///                         Key = "username@b4gTenant.onmicrosoft.com",
+    ///                         Secret = "Password"
+    ///                     };
+    /// 
+    /// AuthToken token = null;
+    /// Authorization auth = new Authorization();
+    /// 
+    /// token = await auth.AuthenticateAsync(info);
+    /// </example>
     public class AuthToken
     {
+        /// <summary>
+        /// The authorization token
+        /// </summary>
+        /// <returns><see cref="T:Task{System.String}"/></returns>
         public string Token { get; set; }
     }
 
     /// <summary>
     /// Supports Authoriziation for Brisk4Games
     /// </summary>
+    /// <example>
+    /// Credentials info = new Credentials()
+    ///                    {
+    ///                         Key = "username@b4gTenant.onmicrosoft.com",
+    ///                         Secret = "Password"
+    ///                     };
+    /// 
+    /// AuthToken token = null;
+    /// Authorization auth = new Authorization();
+    /// 
+    /// token = await auth.AuthenticateAsync(info);
+    /// </example>
     public class Authorization
     {
         private readonly string _tenantName = ConfigurationManager.AppSettings["TenantName"];
@@ -41,8 +85,9 @@ namespace Brisk4GameSDK
         /// <summary>
         /// Authenticate using the given credentials
         /// </summary>
-        /// <param name="credentials">The credentials to authenticate with</param>
-        /// <returns>The authenticated token</returns>
+        /// <param name="credentials">The credentials used to authenticate </param>
+        /// <returns>An <see cref="T:IEnumerable{Asset}"/> in the appropriate blob storage file path</returns>
+        /// <returns>The authenticated <see cref="T:Task{AuthToken}"/> token</returns>
         public async Task<AuthToken> AuthenticateAsync(Credentials credentials)
         {
             var context = new AuthenticationContext($"{_authority}/{_tenantName}");

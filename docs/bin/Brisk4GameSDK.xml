@@ -8,6 +8,25 @@
             <summary>
             Provides methods to manage Game Assets
             </summary>
+            <example>
+            Credentials info = new Credentials()
+                               {
+                                    Key = "username@b4gTenant.onmicrosoft.com",
+                                    Secret = "Password"
+                                };
+            
+            AuthToken token = null;
+            Authorization auth = new Authorization();
+            
+            token = await auth.AuthenticateAsync(info);
+            AssetManager assetManager = new AssetManager(token);
+            </example>
+        </member>
+        <member name="M:Brisk4GameSDK.AssetManager.#ctor(Brisk4GameSDK.AuthToken)">
+            <summary>
+            Constructor method accepting a valid authentication token
+            </summary>
+            <param name="token">A valid authentication token</param>
         </member>
         <member name="M:Brisk4GameSDK.AssetManager.UploadFile(System.String,System.String,System.String)">
             <summary>
@@ -32,29 +51,103 @@
             </summary>
             <param name="gameId">The game the asset should be associated with</param>
             <param name="filename">The name of the asset to delete</param>
-            <returns></returns>
+            <returns><see cref="T:Task{String}"/></returns>
         </member>
         <member name="T:Brisk4GameSDK.Credentials">
             <summary>
             Holds the credentials to use when authenticating
             </summary>
+            <example>
+            Credentials info = new Credentials()
+                               {
+                                    Key = "username@b4gTenant.onmicrosoft.com",
+                                    Secret = "Password"
+                                };
+            </example>
+        </member>
+        <member name="P:Brisk4GameSDK.Credentials.Key">
+            <summary>
+            The authentication key
+            </summary>
+            <returns>System.String</returns>
+        </member>
+        <member name="P:Brisk4GameSDK.Credentials.Secret">
+            <summary>
+            The authentication secret
+            </summary>
+            <returns>System.String</returns>
         </member>
         <member name="T:Brisk4GameSDK.AuthToken">
             <summary>
             Holds the token associated with the successful authentication
             </summary>
+            <example>
+            Credentials info = new Credentials()
+                               {
+                                    Key = "username@b4gTenant.onmicrosoft.com",
+                                    Secret = "Password"
+                                };
+            
+            AuthToken token = null;
+            Authorization auth = new Authorization();
+            
+            token = await auth.AuthenticateAsync(info);
+            </example>
+        </member>
+        <member name="P:Brisk4GameSDK.AuthToken.Token">
+            <summary>
+            The authorization token
+            </summary>
+            <returns><see cref="T:Task{System.String}"/></returns>
         </member>
         <member name="T:Brisk4GameSDK.Authorization">
             <summary>
             Supports Authoriziation for Brisk4Games
             </summary>
+            <example>
+            Credentials info = new Credentials()
+                               {
+                                    Key = "username@b4gTenant.onmicrosoft.com",
+                                    Secret = "Password"
+                                };
+            
+            AuthToken token = null;
+            Authorization auth = new Authorization();
+            
+            token = await auth.AuthenticateAsync(info);
+            </example>
         </member>
         <member name="M:Brisk4GameSDK.Authorization.AuthenticateAsync(Brisk4GameSDK.Credentials)">
             <summary>
             Authenticate using the given credentials
             </summary>
-            <param name="credentials">The credentials to authenticate with</param>
-            <returns>The authenticated token</returns>
+            <param name="credentials">The credentials used to authenticate </param>
+            <returns>An <see cref="T:IEnumerable{Asset}"/> in the appropriate blob storage file path</returns>
+            <returns>The authenticated <see cref="T:Task{AuthToken}"/> token</returns>
+        </member>
+        <member name="T:Brisk4GameSDK.ChurnManager">
+            <summary>
+            Retrieves user churn values
+            </summary>
+            <example>
+            Credentials info = new Credentials()
+                               {
+                                    Key = "username@b4gTenant.onmicrosoft.com",
+                                    Secret = "Password"
+                                };
+            
+            AuthToken token = null;
+            Authorization auth = new Authorization();
+            
+            token = await auth.AuthenticateAsync(info);
+            ChurnManager churnManager = new ChurnManager(token);
+            </example>
+        </member>
+        <member name="M:Brisk4GameSDK.ChurnManager.#ctor(Brisk4GameSDK.AuthToken)">
+            <summary>
+            Constructor method accepting a valid authentication token
+            </summary>
+            <param name="token">A valid authentication token</param>
         </member>
         <member name="M:Brisk4GameSDK.ChurnManager.Get(System.String,System.String)">
             <summary>
@@ -62,12 +155,20 @@
             </summary>
             <param name="gameId">The game for which the churn value should be retrieved</param>
             <param name="playerId">The player for which the churn value should be retrieved</param>
-            <returns>The churn value</returns>
+            <returns>The churn value as a <see cref="T:Task{System.String}"/></returns>
         </member>
         <member name="T:Brisk4GameSDK.FriendLink">
             <summary>
             Encapsulates a relationship between two people and a game
             </summary>
+            <example>
+             var friend = new FriendLink()
+                          {
+                               GameId = "GameId",
+                               PlayerId = "PlayerId",
+                               FriendId = "FriendId"
+                          }
+            </example>
         </member>
         <member name="P:Brisk4GameSDK.FriendLink.PlayerId">
             <summary>
@@ -75,46 +176,54 @@
             </summary>
             <returns>System.String</returns>
         </member>
+        <member name="P:Brisk4GameSDK.FriendLink.FriendId">
+            <summary>
+            The Id of the Friend
+            </summary>
+            <returns>System.String</returns>
+        </member>
+        <member name="P:Brisk4GameSDK.FriendLink.GameId">
+            <summary>
+            The Id of the Game
+            </summary>
+            <returns>System.String</returns>
+        </member>
         <member name="T:Brisk4GameSDK.FriendManager">
             <summary>
             Manages Friend Relationships
             </summary>
+            <example>
+            Credentials info = new Credentials()
+                               {
+                                    Key = "username@b4gTenant.onmicrosoft.com",
+                                    Secret = "Password"
+                                };
+            
+            AuthToken token = null;
+            Authorization auth = new Authorization();
+            
+            token = await auth.AuthenticateAsync(info);
+            FriendManager manager = new FriendManager(token);
+            </example>
         </member>
-        <member name="M:Brisk4GameSDK.FriendManager.AddFriend(Brisk4GameSDK.FriendLink)">
+        <member name="M:Brisk4GameSDK.FriendManager.#ctor(Brisk4GameSDK.AuthToken)">
             <summary>
-            Create a new friend relationship between two people
+            Constructor method accepting a valid authentication token
             </summary>
-            <param name="friend">Defines the relationship between 2 people and a game</param>
-            <returns>The result of the operation</returns>
+            <param name="token">A valid authentication token</param>
         </member>
-        <member name="M:Brisk4GameSDK.FriendManager.AddFriends(System.Collections.Generic.IEnumerable{Brisk4GameSDK.FriendLink})">
-            <summary>
-            Creates new friend relationships between a list of people 
-            All elements relate to the same player and game
-            </summary>
-            <param name="friends">A list of friends relationships</param>
-            <returns>The result of the operation</returns>
-        </member>
+        <!-- Badly formed XML comment ignored for member "M:Brisk4GameSDK.FriendManager.AddFriend(Brisk4GameSDK.FriendLink)" -->
+        <!-- Badly formed XML comment ignored for member "M:Brisk4GameSDK.FriendManager.AddFriends(System.Collections.Generic.IEnumerable{Brisk4GameSDK.FriendLink})" -->
         <member name="M:Brisk4GameSDK.FriendManager.GetFriends(System.String,System.String)">
             <summary>
             Retrieves friends assoicated with the player and game
             </summary>
             <param name="gameId">The game associated with the player</param>
             <param name="playerId">The player whose friends should be retrieved</param>
-            <returns>A list of friends associated with the game and player <see cref="T:System.Collections.Generic.List`1"/></returns>
+            <returns>A list of friends associated with the game and player <see cref="!:List&lt;System.String&gt;"/></returns>
         </member>
-        <member name="M:Brisk4GameSDK.FriendManager.DeleteFriend(Brisk4GameSDK.FriendLink)">
-            <summary>
-            Removes a friend relationship
-            </summary>
-            <param name="friend">The friend relationship that should be deleted</param>
-            <returns>The result of the operation</returns>
-        </member>
-        <member name="T:Brisk4GameSDK.Asset">
-            <summary>
-            Defines an Asset held in blob storage
-            </summary>
-        </member>
+        <!-- Badly formed XML comment ignored for member "M:Brisk4GameSDK.FriendManager.DeleteFriend(Brisk4GameSDK.FriendLink)" -->
+        <!-- Badly formed XML comment ignored for member "T:Brisk4GameSDK.Asset" -->
         <member name="P:Brisk4GameSDK.Asset.Filename">
             <summary>
             Gets the Filename
@@ -195,33 +304,45 @@
             <param name="path">The endpoint to invoke</param>
             <returns>The result of the operation</returns>
         </member>
-        <member name="T:Brisk4GameSDK.LeaderboardEntry">
+        <!-- Badly formed XML comment ignored for member "T:Brisk4GameSDK.LeaderboardEntry" -->
+        <member name="P:Brisk4GameSDK.LeaderboardEntry.PlayerId">
             <summary>
-            Represents a entry in a leaderboard
+            The players Id
             </summary>
+            <returns><see cref="T:Task{System.String}"/></returns>
         </member>
-        <member name="M:Brisk4GameSDK.LeaderboardManager.GetGameLeaderboard(System.String)">
+        <member name="P:Brisk4GameSDK.LeaderboardEntry.Score">
             <summary>
-            Returns a leaderboard for a given game
+            The players score
             </summary>
-            <param name="gameId">The game the leaderboard is associated with</param>
-            <returns>The retrieved leaderboard</returns>
+            <returns><see cref="T:Task{System.String}"/></returns>
         </member>
-        <member name="M:Brisk4GameSDK.LeaderboardManager.GetFriendLeaderboard(System.String,System.String)">
+        <member name="T:Brisk4GameSDK.LeaderboardManager">
             <summary>
-            Returns a friend leaderboard for a given game
+            Provides access to player leaderboards
             </summary>
-            <param name="gameId">The game the leaderboard is associated with</param>
-            <param name="playerId">The player the leaderboard is associated with</param>
-            <returns>The retrieved leaderboard</returns>
+            <example>
+            Credentials info = new Credentials()
+                               {
+                                    Key = "username@b4gTenant.onmicrosoft.com",
+                                    Secret = "Password"
+                                };
+            
+            AuthToken token = null;
+            Authorization auth = new Authorization();
+            
+            token = await auth.AuthenticateAsync(info);
+            LeaderboardManager leaderboardManager = new LeaderboardManager(token);
+            </example>
         </member>
-        <member name="M:Brisk4GameSDK.LeaderboardManager.GetCountryLeaderboard(System.String,System.String)">
+        <member name="M:Brisk4GameSDK.LeaderboardManager.#ctor(Brisk4GameSDK.AuthToken)">
             <summary>
-            Returns a country leaderboard for a given game
+            Constructor method accepting a valid authentication token
             </summary>
-            <param name="gameId">The game the leaderboard is associated with</param>
-            <param name="countryId">The country code the leaderboard is associated with</param>
-            <returns>The retrieved leaderboard</returns>
+            <param name="token">A valid authentication token</param>
         </member>
+        <!-- Badly formed XML comment ignored for member "M:Brisk4GameSDK.LeaderboardManager.GetGameLeaderboard(System.String)" -->
+        <!-- Badly formed XML comment ignored for member "M:Brisk4GameSDK.LeaderboardManager.GetFriendLeaderboard(System.String,System.String)" -->
+        <!-- Badly formed XML comment ignored for member "M:Brisk4GameSDK.LeaderboardManager.GetCountryLeaderboard(System.String,System.String)" -->
     </members>
 </doc>

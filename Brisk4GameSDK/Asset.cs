@@ -10,6 +10,10 @@ namespace Brisk4GameSDK
     /// <summary>
     /// Defines an Asset held in blob storage
     /// </summary>
+    /// <example>
+    /// AssetManager assetManager = new AssetManager(token);
+    /// IEnumerable<Asset> assets = await assetManager.GetFiles("AS3");
+    /// </example>
     public class Asset
     {
         private string _filename;
