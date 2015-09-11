@@ -69,6 +69,12 @@
             Encapsulates a relationship between two people and a game
             </summary>
         </member>
+        <member name="P:Brisk4GameSDK.FriendLink.PlayerId">
+            <summary>
+            The Id of the Player
+            </summary>
+            <returns>System.String</returns>
+        </member>
         <member name="T:Brisk4GameSDK.FriendManager">
             <summary>
             Manages Friend Relationships
@@ -114,31 +120,37 @@
             Gets the Filename
             </summary>
             <see cref="T:System.String"/>
+            <returns>System.String</returns>
         </member>
         <member name="P:Brisk4GameSDK.Asset.TenantName">
             <summary>
             Gets a TenantName
             </summary>
+            <returns>System.String</returns>
         </member>
         <member name="P:Brisk4GameSDK.Asset.GameName">
             <summary>
             The name of the Game
             </summary>
+            <returns>System.String</returns>
         </member>
         <member name="P:Brisk4GameSDK.Asset.UserName">
             <summary>
             The UserName associated with this Asset
             </summary>
+            <returns>System.String</returns>
         </member>
         <member name="P:Brisk4GameSDK.Asset.CdnEndpoint">
             <summary>
             An endpoint location on the CDN for this asset
             </summary>
+            <returns>System.String</returns>
         </member>
         <member name="P:Brisk4GameSDK.Asset.RootContainer">
             <summary>
             The Root Container
             </summary>
+            <returns>System.String</returns>
         </member>
         <member name="M:Brisk4GameSDK.HttpHelper.Get(Brisk4GameSDK.AuthToken,System.String)">
             <summary>

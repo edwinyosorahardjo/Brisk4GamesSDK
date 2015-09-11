@@ -12,7 +12,7 @@
 <div class="row">
     <div class="col-md-12">
         <h2>Methods</h2>
-        <table>
+        <table class="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -25,7 +25,7 @@
                 @foreach (var item in Model.Children.Where(t => t.Type == "M"))
                 {
                     <tr>
-                        <td>@item.Name</td>
+                        <td>@item.Name.Replace("(", " (").Replace("{", " {")</td>
                         <td>@Html.Partial("_MethodSig", item)</td>
                         <td>@item.Returns</td>
                         <td>@item.Summary</td>
@@ -36,10 +36,11 @@
     </div>
     <div class="col-md-12">
         <h2>Properties</h2>
-        <table>
+        <table class="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th>Name</th>
+                    <th>Type</th>
                     <th>Summary</th>
                 </tr>
             </thead>
@@ -48,6 +49,7 @@
                 {
                     <tr>
                         <td>@item.Name</td>
+                        <td>@item.Returns</td>
                         <td>@item.Summary</td>
                     </tr>
                 }

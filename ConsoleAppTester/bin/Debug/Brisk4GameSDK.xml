@@ -16,7 +16,7 @@
             <param name="gameId">The game the asset should be associated with</param>
             <param name="localFilePath">The local system file path</param>
             <param name="mimeType">The file mime type</param>
-            <returns><see cref="!:Task`1&lt;String&gt;"/></returns>
+            <returns><see cref="T:Task{String}"/></returns>
         </member>
         <member name="M:Brisk4GameSDK.AssetManager.GetFiles(System.String)">
             <summary>
@@ -24,7 +24,7 @@
             </summary>
             <param name="gameId">The game the asset should be associated with</param>
             <see cref="T:Brisk4GameSDK.Asset">See Asset</see>
-            <returns>IEnumerable&lt;Asset&gt; list of assets in the appropriate blob storage file path</returns>
+            <returns>An <see cref="T:IEnumerable{Asset}"/> in the appropriate blob storage file path</returns>
         </member>
         <member name="M:Brisk4GameSDK.AssetManager.DeleteFile(System.String,System.String)">
             <summary>
@@ -114,31 +114,37 @@
             Gets the Filename
             </summary>
             <see cref="T:System.String"/>
+            <returns>System.String</returns>
         </member>
         <member name="P:Brisk4GameSDK.Asset.TenantName">
             <summary>
             Gets a TenantName
             </summary>
+            <returns>System.String</returns>
         </member>
         <member name="P:Brisk4GameSDK.Asset.GameName">
             <summary>
             The name of the Game
             </summary>
+            <returns>System.String</returns>
         </member>
         <member name="P:Brisk4GameSDK.Asset.UserName">
             <summary>
             The UserName associated with this Asset
             </summary>
+            <returns>System.String</returns>
         </member>
         <member name="P:Brisk4GameSDK.Asset.CdnEndpoint">
             <summary>
             An endpoint location on the CDN for this asset
             </summary>
+            <returns>System.String</returns>
         </member>
         <member name="P:Brisk4GameSDK.Asset.RootContainer">
             <summary>
             The Root Container
             </summary>
+            <returns>System.String</returns>
         </member>
         <member name="M:Brisk4GameSDK.HttpHelper.Get(Brisk4GameSDK.AuthToken,System.String)">
             <summary>
