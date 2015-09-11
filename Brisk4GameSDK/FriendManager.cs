@@ -11,29 +11,46 @@ namespace Brisk4GameSDK
     /// <summary>
     /// Manages Friend Relationships
     /// </summary>
+    /// <example>
+    /// Credentials info = new Credentials()
+    ///                    {
+    ///                         Key = "username@b4gTenant.onmicrosoft.com",
+    ///                         Secret = "Password"
+    ///                     };
+    /// 
+    /// AuthToken token = null;
+    /// Authorization auth = new Authorization();
+    /// 
+    /// token = await auth.AuthenticateAsync(info);
+    /// FriendManager manager = new FriendManager(token);
+    /// </example>
     public class FriendManager : EndpointManager
     {
+        /// <summary>
+        /// Constructor method accepting a valid authentication token
+        /// </summary>
+        /// <param name="token">A valid authentication token</param>
         public FriendManager(AuthToken token) : base(token, ConfigurationManager.AppSettings["FabricEndpoint"])
         {
         }
-       
+
         /// <summary>
         /// Create a new friend relationship between two people
         /// </summary>
         /// <param name="friend">Defines the relationship between 2 people and a game</param>
-        /// <returns>The result of the operation</returns>
+        /// <returns>The result of the operation as a <see cref="T:Task{String}</returns>
         public async Task<string> AddFriend(FriendLink friend)
         {
             return await _httpHelper.Post(_token, $"api/friend/{friend.GameId}/{friend.PlayerId}/{friend.FriendId}");
         }
 
-       
+
         /// <summary>
         /// Creates new friend relationships between a list of people 
         /// All elements relate to the same player and game
         /// </summary>
         /// <param name="friends">A list of friends relationships</param>
-        /// <returns>The result of the operation</returns>
+        /// <returns>The result of the operation as a <see cref="T:Task{String}</returns>
         public async Task<string> AddFriends(IEnumerable<FriendLink> friends)
         {
             var friendList = friends.Select(fl => fl.FriendId).ToList();
@@ -47,7 +64,7 @@ namespace Brisk4GameSDK
         /// </summary>
         /// <param name="gameId">The game associated with the player</param>
         /// <param name="playerId">The player whose friends should be retrieved</param>
-        /// <returns>A list of friends associated with the game and player <see cref="List{String}"/></returns>
+        /// <returns>A list of friends associated with the game and player <see cref="List{System.String}"/></returns>
         public async Task<IEnumerable<string>> GetFriends(string gameId, string playerId)
         {
             var result = await _httpHelper.Get(_token, $"api/friend/{gameId}/{playerId}");
@@ -59,7 +76,7 @@ namespace Brisk4GameSDK
         /// Removes a friend relationship
         /// </summary>
         /// <param name="friend">The friend relationship that should be deleted</param>
-        /// <returns>The result of the operation</returns>
+        /// <returns>The result of the operation as a <see cref="T:Task{String}</returns>
         public async Task<string> DeleteFriend(FriendLink friend)
         {
             return await _httpHelper.Delete(_token, $"api/friend/{friend.GameId}/{friend.PlayerId}/{friend.FriendId}");
