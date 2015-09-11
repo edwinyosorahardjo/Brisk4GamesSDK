@@ -1,10 +1,34 @@
 ﻿@model String
 
 @{
-    string[] components = new string[1] { Model };
+    List<string> components = new List<string> { Model };
+
+    var seeTag = "<see cref=\"T:";
+    if (Model.Contains(seeTag))//replace see tag with cref
+    {
+        var tagStart = Model.IndexOf(seeTag) + seeTag.Length;
+        var tagEnd = Model.IndexOf("\"", tagStart + seeTag.Length-1);
+
+        var corrected = Model.Substring(tagStart, tagEnd - tagStart);
+        components[0] = corrected;
+    }
+
+    for (int i = 0; i < components.Count; i++)//if any component is generic, explode types
+    {
+        if (components[i].Contains("{"))
+        {
+            var splits = components[i].Split('{').Select(t => t.Trim('{', '}')).ToArray();
+            components.RemoveAt(i);
+            for (int j = 0; j < splits.Count(); j++)
+            {
+                components.Insert(i + j, splits[j]);
+            }
+        }
+    }
+
     if (Model.Contains("{"))
     {
-        components = Model.Split('{').Select(t=>t.Trim('{','}')).ToArray();
+        //components = Model.Split('{').Select(t=>t.Trim('{','}')).ToArray();
     }
 
     var documentCode = new Func<string, bool>((name) =>
@@ -21,6 +45,6 @@
     }
     else
     {
-        @item
+        <span>@item</span>
     }
 }

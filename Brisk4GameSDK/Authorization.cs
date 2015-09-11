@@ -56,7 +56,7 @@ namespace Brisk4GameSDK
         /// <summary>
         /// The authorization token
         /// </summary>
-        /// <returns><see cref="T:Task{System.String}"/></returns>
+        /// <returns><see cref="T:System.String"/></returns>
         public string Token { get; set; }
     }
 
@@ -86,8 +86,7 @@ namespace Brisk4GameSDK
         /// Authenticate using the given credentials
         /// </summary>
         /// <param name="credentials">The credentials used to authenticate </param>
-        /// <returns>An <see cref="T:IEnumerable{Asset}"/> in the appropriate blob storage file path</returns>
-        /// <returns>The authenticated <see cref="T:Task{AuthToken}"/> token</returns>
+        /// <returns>The authenticated <see cref="T:Task{Brisk4GameSDK.AuthToken}"/> token</returns>
         public async Task<AuthToken> AuthenticateAsync(Credentials credentials)
         {
             var context = new AuthenticationContext($"{_authority}/{_tenantName}");

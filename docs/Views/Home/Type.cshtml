@@ -25,9 +25,9 @@
                 @foreach (var item in Model.Children.Where(t => t.Type == "M"))
                 {
                     <tr>
-                        <td>@item.Name.Replace("(", " (").Replace("{", " {")</td>
+                        <td>@item.Name.Replace(Model.Name + ".", "").Replace("(", " (").Replace("{", " {").Replace(",", ", ")</td>
                         <td>@Html.Partial("_MethodSig", item)</td>
-                        <td>@item.Returns</td>
+                        <td>@Html.Partial("_TypeLink", (item.Returns))</td>
                         <td>@item.Summary</td>
                     </tr>
                 }
@@ -48,8 +48,8 @@
                 @foreach (var item in Model.Children.Where(t=>t.Type == "P"))
                 {
                     <tr>
-                        <td>@item.Name</td>
-                        <td>@item.Returns</td>
+                        <td>@item.Name.Replace(Model.Name + ".", "")</td>
+                        <td>@Html.Partial("_TypeLink", item.Returns)</td>
                         <td>@item.Summary</td>
                     </tr>
                 }

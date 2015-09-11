@@ -21,6 +21,10 @@ namespace docs.Models
             {
                 this.Returns = ReadRaw(member.Descendants("returns").First());
             }
+            else
+            {
+                this.Returns = "Undocumented return type";
+            }
         }
 
         private string ReadRaw(XElement xElement)

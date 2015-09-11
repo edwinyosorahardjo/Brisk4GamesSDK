@@ -98,7 +98,7 @@
             <summary>
             The authorization token
             </summary>
-            <returns><see cref="T:Task{System.String}"/></returns>
+            <returns><see cref="T:System.String"/></returns>
         </member>
         <member name="T:Brisk4GameSDK.Authorization">
             <summary>
@@ -122,8 +122,7 @@
             Authenticate using the given credentials
             </summary>
             <param name="credentials">The credentials used to authenticate </param>
-            <returns>An <see cref="T:IEnumerable{Asset}"/> in the appropriate blob storage file path</returns>
-            <returns>The authenticated <see cref="T:Task{AuthToken}"/> token</returns>
+            <returns>The authenticated <see cref="T:Task{Brisk4GameSDK.AuthToken}"/> token</returns>
         </member>
         <member name="T:Brisk4GameSDK.ChurnManager">
             <summary>
