@@ -311,6 +311,82 @@
             <param name="path">The endpoint to invoke</param>
             <returns>The result of the operation</returns>
         </member>
+        <member name="T:Brisk4GameSDK.Ingestion.IngestionManager">
+            <summary>
+            Manages the ingestion of messages (pastries?) 
+            </summary>
+        </member>
+        <member name="M:Brisk4GameSDK.Ingestion.IngestionManager.Send(Brisk4GameSDK.Ingestion.IngestionMessage)">
+            <summary>
+            Sends the supplied message to Brisk4Games
+            </summary>
+            <param name="message">A populated game message</param>
+        </member>
+        <member name="T:Brisk4GameSDK.Ingestion.IngestionMessage">
+            <summary>
+            Describes a message from a Game to the Brisk4Games system.
+            </summary>
+        </member>
+        <member name="M:Brisk4GameSDK.Ingestion.IngestionMessage.#ctor">
+            <summary>
+            Constructs a new instance of this class; Properties is instantiated; all other properties are default(T)
+            </summary>
+        </member>
+        <member name="P:Brisk4GameSDK.Ingestion.IngestionMessage.Timestamp">
+            <summary>
+            The Time this event happened. This can be Client time or Game time; it's important that you choose a time scheme and keep consistently with it.
+            </summary>
+            <returns>System.DateTime</returns>
+        </member>
+        <member name="P:Brisk4GameSDK.Ingestion.IngestionMessage.IPAddress">
+            <summary>
+            The IP of the consuming client
+            </summary>
+            <returns>System.String</returns>
+        </member>
+        <member name="P:Brisk4GameSDK.Ingestion.IngestionMessage.GameId">
+            <summary>
+            The identifier of the Game
+            </summary>
+            <returns>System.String</returns>
+        </member>
+        <member name="P:Brisk4GameSDK.Ingestion.IngestionMessage.PlayerId">
+            <summary>
+            The identifier of the Player
+            </summary>
+            <returns>System.String</returns>
+        </member>
+        <member name="P:Brisk4GameSDK.Ingestion.IngestionMessage.MessageType">
+            <summary>
+            The type of Message, i.e. "Score"/"Kill"/"Buy"/"Win"/"Lose"
+            </summary>
+            <returns>System.String</returns>
+        </member>
+        <member name="P:Brisk4GameSDK.Ingestion.IngestionMessage.Properties">
+            <summary>
+            Custom properties for this message
+            </summary>
+        </member>
+        <member name="T:Brisk4GameSDK.Ingestion.ScoreMessage">
+            <summary>
+            A message describing a Score event in a game.
+            </summary>
+            <seealso cref="T:Brisk4GameSDK.Ingestion.IngestionMessage"/>
+        </member>
+        <member name="M:Brisk4GameSDK.Ingestion.ScoreMessage.#ctor(System.String,System.String,System.Int32)">
+            <summary>
+            Instantiates an instance of a Score message for a game and player.
+            </summary>
+            <param name="gameId">Scored Game</param>
+            <param name="playerId">Scoring Player</param>
+            <param name="score">Score Value</param>
+        </member>
+        <member name="P:Brisk4GameSDK.Ingestion.ScoreMessage.MessageType">
+            <summary>
+            The type of Message here is always "Score"
+            </summary>
+            <returns>System.String</returns>
+        </member>
         <member name="T:Brisk4GameSDK.LeaderboardEntry">
             <summary>
             Represents a entry in a leaderboard

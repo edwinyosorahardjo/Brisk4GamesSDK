@@ -29,6 +29,10 @@ namespace docs.Models
             {
                 this.Example = member.Descendants("example").First().Value;
             }
+            if (member.Descendants("seealso").Any())
+            {
+                this.SeeAlso = member.Descendants("seealso").First().Attribute("cref").Value;
+            }
         }
 
         private string ReadRaw(XElement xElement)
@@ -60,5 +64,6 @@ namespace docs.Models
         public string Returns { get; set; }
         public string Example { get; set; }
         public DocumentationMember[] Children { get; set; }
+        public string SeeAlso { get; set; }
     }
 }

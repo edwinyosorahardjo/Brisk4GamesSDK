@@ -5,8 +5,12 @@
 }
 
 <div class="jumbotron">
-    <h1>@Model.Name</h1>
+    <h1>@Model.Name.Replace(".", ". ")</h1>
     <p class="lead">@Model.Summary.</p>
+    @if (!string.IsNullOrEmpty(Model.SeeAlso))
+    {
+    <p><b>See Also</b> @Html.Partial("_TypeLink", Model.SeeAlso.Substring(2))</p>
+    }
 </div>
 
 
