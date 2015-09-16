@@ -18,6 +18,20 @@ namespace Brisk4GameSDK.Ingestion
     /// <summary>
     /// Manages the ingestion of messages (pastries?) 
     /// </summary>
+    /// <example>
+    /// Credentials info = new Credentials()
+    ///                    {
+    ///                         Key = "username@b4gTenant.onmicrosoft.com",
+    ///                         Secret = "Password"
+    ///                     };
+    /// 
+    /// AuthToken token = null;
+    /// Authorization auth = new Authorization();
+    /// 
+    /// token = await auth.AuthenticateAsync(info);
+    /// IngestionManager ingestionManager = new IngestionManager(token);
+    /// ingestionManager.Send(new ScoreMessage("game1", "player666", 25));
+    /// </example>
     public class IngestionManager
     {
         internal readonly HttpHelper _httpHelper;
